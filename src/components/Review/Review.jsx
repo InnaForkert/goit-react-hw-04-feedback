@@ -27,7 +27,11 @@ class Review extends Component {
         <h1>Please leave feedback</h1>
         <Options options={options} updateRes={this.updateRes.bind(this)} />
         <h2>Statistics</h2>
-        <Statistics options={options} results={results} />
+        <Statistics
+          options={options}
+          results={results}
+          total={this.countTotalFeedback()}
+        />
       </div>
     );
   }
