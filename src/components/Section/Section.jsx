@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import PropTypes, { element, elementType } from 'prop-types';
 
 const Container = styled.div`
   text-align: center;
@@ -38,6 +39,12 @@ const Section = ({ title, children, flex }) => {
       <List flex={flex}>{children}</List>
     </Container>
   );
+};
+
+Section.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.object.isRequired,
+  flex: PropTypes.bool,
 };
 
 export default Section;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Button = styled.button`
   background-color: #cbd5dc;
@@ -35,6 +36,11 @@ const Options = ({ options, onLeaveFeedback }) => {
       })}
     </>
   );
+};
+
+Options.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };
 
 export default Options;

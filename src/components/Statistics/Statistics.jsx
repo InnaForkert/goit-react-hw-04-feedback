@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Li = styled.li`
   width: 300px;
@@ -34,6 +35,12 @@ const Statistics = ({ options, results, total }) => {
       <Li bold>Positive: {total ? positive + '%' : 'No reviews yet!'}</Li>
     </>
   );
+};
+
+Statistics.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  results: PropTypes.arrayOf(PropTypes.number).isRequired,
+  total: PropTypes.number.isRequired,
 };
 
 export default Statistics;
