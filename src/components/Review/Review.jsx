@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Option from './Option';
-import Result from './Result';
+import Options from './Options';
+import Statistics from './Statistics';
 
 class Review extends Component {
   state = {
@@ -9,34 +9,25 @@ class Review extends Component {
     bad: 0,
   };
 
-  updateRes = option => {
-    console.log(option);
+  updateRes = e => {
     this.setState(prevState => ({
-      [option]: prevState[option] + 1,
+      [e.target.name]: prevState[e.target.name] + 1,
     }));
+  };
+
+  countTotalFeedback = () => {
+    return Object.keys(this.state).reduce((acc, el) => acc + this.state[el], 0);
   };
 
   render() {
     const options = Object.keys(this.state);
+    const results = Object.values(this.state);
     return (
       <div>
         <h1>Please leave feedback</h1>
-        {options.map((option, i) => {
-          return (
-            <Option
-              optionName={option}
-              key={i}
-              updateRes={() => this.updateRes(option)}
-            />
-          );
-        })}
+        <Options options={options} updateRes={this.updateRes.bind(this)} />
         <h2>Statistics</h2>
-        <ul>
-          {options.map((option, i) => {
-            const res = this.state[option];
-            return <Result optionName={option} optionRes={res} key={i} />;
-          })}
-        </ul>
+        <Statistics options={options} results={results} />
       </div>
     );
   }
