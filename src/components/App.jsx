@@ -26,6 +26,7 @@ class App extends Component {
     return (
       <>
         <Section
+          flex={true}
           title={'Please leave feedback'}
           children={
             <Options
@@ -39,6 +40,7 @@ class App extends Component {
           children={
             this.countTotalFeedback() ? (
               <Statistics
+                flex={false}
                 options={options}
                 results={results}
                 total={this.countTotalFeedback()}
