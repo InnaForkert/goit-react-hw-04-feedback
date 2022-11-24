@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import PropTypes, { element, elementType } from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   text-align: center;
