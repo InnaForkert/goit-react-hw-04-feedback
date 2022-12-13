@@ -1,10 +1,5 @@
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
-const P = styled.p`
-  font-family: monospace;
-  font-size: 20px;
-`;
+import { P } from './notificationStyled';
 
 const Notification = ({ message }) => {
   return <P>{message}</P>;

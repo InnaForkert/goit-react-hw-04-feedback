@@ -1,35 +1,5 @@
-import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-
-const Container = styled.div`
-  text-align: center;
-  font-family: mono-space;
-  text-transform: capitalize;
-  color: #4b5a6b;
-`;
-
-const Title = styled.h1`
-  display: block;
-  width: 350px;
-  margin: 30px auto;
-  background-color: #eddede;
-  padding: 20px;
-  border-radius: 25px;
-  box-shadow: 1px 1px 1px #4b5a6b;
-`;
-
-const List = styled.ul`
-  list-style: none;
-  padding: 0;
-
-  ${props =>
-    props.flex &&
-    css`
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    `}
-`;
+import { Title, List, Container } from './sectionStyled';
 
 const Section = ({ title, children, flex }) => {
   return (
