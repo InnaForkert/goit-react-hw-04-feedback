@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import Options from './Options';
 import Statistics from './Statistics';
 import Section from './Section';
