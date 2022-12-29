@@ -14,7 +14,7 @@ const App = () => {
 
   const updateRes = e => {
     setFeedbackCount(prevState => {
-      return { ...prevState, [e.targer.name]: prevState[e.target.name] + 1 };
+      return { ...prevState, [e.target.name]: prevState[e.target.name] + 1 };
     });
   };
 
